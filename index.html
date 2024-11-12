@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <header class = "header">
+        <a href="#" class = "logo"><span>Anthony Kim</span></a>
+
+        <ul class="nav-links">
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#workspace">Workspace</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+        <a href="https://github.com/antmskim" target="_blank">
+            <button class="visit-btn">Visit Github</button>
+            </a>
+            <i class="fa-solid fa-ellipsis" id="menu-icon"></i>
+       
+    </header>
+
+    <section id = "about" class="about">
+        <div class = "about-container">
+            <img src="image.jpg" alt="">
+            <div class = "info-box">
+
+                <div class = "text">
+                    <h3>Hi, I'm</h3>
+                    <h1>Anthony Kim</h1>
+                    <span>CS student</span>
+            </div>
+
+            <div class="btn-group">
+               <!--- <a href="resume.pdf" class="btn" download>Download Resume</a> -->
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+
+            <div class = "socials">
+                <a href="https://github.com/antmskim" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/anthony-kim1/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="workspace" class="workspace">
+        <h2 class="section-title">Workspace</h2>
+        <div class="workspace-info">
+            <div class="grid">
+                <!-- Workspace card for MalShield -->
+                <div class="grid-card">
+                    <h3 style="text-align: center;">Machine Learning / Data Science</h3>
+        
+                    <div class="btn-group" style="justify-content: center;">
+                        <span class="btn" onclick="toggleProjectDetails('malshield-details')">Click to view more</span>
+                    </div>
+    
+                    <!-- Embedded MalShield project details -->
+                    <div id="malshield-details" class="workspace-details" style="display: none;">
+                        <h3 style="text-align: center;">MalShield Project (NewHacks Hackathon)</h3>
+                        <p><strong>Inspiration:</strong> We were inspired by the cybersecurity theme and prompt regarding creating a basic model to analyze potentially malicious URLs.</p>
+                        <p><strong>What it does:</strong> MalShield is a machine-learning-powered tool designed to help users identify potentially malicious URLs or email content. By leveraging trained models on various online datasets, MalShield provides an assessment of whether the provided input is likely to be malicious. Additionally, the app integrates the Google Gemini API to generate a brief commentary based on the results, providing more context for users.</p>
+                        <p><strong>How we built it:</strong> We started by investigating the creation of machine learning models using Python and libraries like scikit learn. We quickly realized we needed large amounts of data to train the models we were looking to make. So our next goal was to search for credible and valid datasets available on the internet (discussed further in the challenges section). Once we found a usable dataset, we were able to train two different machine learning models using two different ML algorithms. For URL detection, we employed a Random Forest classifier to capture structural patterns and for email detection, we used a Support Vector Machine (SVM) model to distinguish subtle textual differences. At this point we split into two teams so we could simultaneously work on our frontend and backend services. For frontend, we used React to create a simple yet responsive form, from which we collected user input to be sent to the backend. For backend, we used Flask to handle requests from the frontend and loaded the trained models to classify submitted URLs and emails in real-time. Finally, we integrated Google's Gemini API in the frontend, allowing it to provide brief explanations or possibly judgements against the predictions our models made, helping accentuate the reasons why our model made its prediction. Finally, we created a web browser extension (for Google Chrome) using vanilla JavaScript which offered another point of access to our backend API and a different method of URL detection, with that being live detection during regular browsing.</p>
+                        <p><strong>Built with: </strong>HTML | CSS | PYTHON | FLASK | JavaScript | REACT</p>
+                       
+    
+                        <!-- GitHub Link -->
+                        <div class="btn-group" style="justify-content: center; margin-top: 1rem;">
+                            <a href="https://github.com/antmskim/mal-shield.git" target="_blank" class="btn">GitHub Repo</a>
+                        </div>
+
+                        <div class="btn-group" style="justify-content: center;">
+                            <button onclick="toggleProjectDetails('malshield-details')" class="btn">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <section id="projects" class="projects">
+
+        <h2 class="section-title">Recent Projects</h2>
+
+        <div class="projects-grid">
+
+
+            <div class="projects-card">
+                <img src="project-1.jpeg" alt="">
+                <h3>Onitama Game</h3>
+                <p>
+                    Onitama is a strategy board game, 
+                    and this project involved building 
+                    a software version of the game using Python. 
+                    The project focuses on the principles of 
+                    Object-Oriented Programming (OOP) and requires 
+                    designing a modular and well-documented codebase.
+                </p>
+                <div class = "btn-group">
+                    <a href="https://github.com/antmskim/Onitama-Game" target="_blank" class="btn">
+                        Github Repo
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </section>
+
+    <section id="contact" class="contact">
+    <div class="input-box">
+        <h2 class="section-title">Contact Me</h2>
+
+        <form action="mailto:anthonymskim@gmail.com" method="POST" enctype="text/plain">
+            <!-- Input field for the user's message -->
+            <div class="input">
+                <input type="text" name="message" placeholder="Your Message" required>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <!-- Submit button -->
+            <div class="btn-group">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+    <footer>
+
+        <ul>
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#workspace">Workspace</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+        <p class="copyright">© All Rights Reserved | Anthony Kim</p>
+    </footer>
+
+
+    <script src = "script.js"></script>
+    
+</body>
+</html>
